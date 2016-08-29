@@ -20,7 +20,7 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,7 +30,7 @@
 
 </head>
 
-<body>
+<body ng-app="osseoAreaRobotics" ng-controller="schools">
 
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
@@ -44,13 +44,13 @@
                 <a href="#top" onclick=$("#menu-close").click();>Home</a>
             </li>
             <li>
-                <a href="#about" onclick=$("#menu-close").click();>Our Programs</a>
+                <a href="#programs" onclick=$("#menu-close").click();>The Programs</a>
             </li>
             <li>
-                <a href="#services" onclick=$("#menu-close").click();>Our Schools</a>
+                <a href="#search" onclick=$("#menu-close").click();>Schools</a>
             </li>
             <li>
-                <a href="#portfolio" onclick=$("#menu-close").click();>Our Mission</a>
+                <a href="#mission" onclick=$("#menu-close").click();>Our Mission</a>
             </li>
             <li>
                 <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
@@ -62,20 +62,27 @@
     <header id="top" class="header">
         <div class="text-vertical-center">
             <h1>Osseo Area Robotics</h1>
-            <h3>To Give the Opportunity of Robotics to Every Child, in Every Grade, in Every School in District 279.</h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">Search for my school</a>
+            <h3>To Give the Opportunity of Robotics to Every Child, in Every Grade, in Every School <br />in <a href="http://www.district279.org">the Osseo School District</a>.</h3>
+            <div class="col-lg-6 pull-right">
+              Crimson Robotics, Mission Statement
+            </div>
+
+            <br>
+            <br>
+            <a href="#search" class="btn btn-dark btn-lg">Search for opportunities at my school</a>
+
         </div>
     </header>
 
     <!-- About -->
-    <section id="about" class="about">
+    <section id="quote" class="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <p class="lead">“Transform our culture by creating a world where science and technology are celebrated and where young people dream of becoming science and technology leaders.”</p>
                     <p class="pull-right">
-                      - Dean Kamen, Inventor and Founder of FIRST Robotics
+                      - <a href="https://en.wikipedia.org/wiki/Dean_Kamen">Dean Kamen</a>, Inventor and Founder of FIRST Robotics
                     </p>
                 </div>
             </div>
@@ -86,7 +93,7 @@
 
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="services bg-primary">
+    <section id="programs" class="services bg-primary">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -105,6 +112,9 @@
                                 <h4>
                                     <strong>Interested?</strong>
                                 </h4>
+                                <p>
+                                  This program is known as FLL Jr
+                                </p>
                                 <a href="#" class="btn btn-light">Search for my school</a>
                             </div>
                         </div>
@@ -120,6 +130,9 @@
                                 <h4>
                                     <strong>Interested?</strong>
                                 </h4>
+                                <p>
+                                  This program is known as FLL
+                                </p>
                                 <a href="#" class="btn btn-light">Search for my school</a>
                             </div>
                         </div>
@@ -135,6 +148,9 @@
                                 <h4>
                                     <strong>Interested?</strong>
                                 </h4>
+                                <p>
+                                  This program is known as VEX
+                                </p>
                                 <a href="#" class="btn btn-light">Search for my school</a>
                             </div>
                         </div>
@@ -150,6 +166,9 @@
                                 <h4>
                                     <strong>Interested?</strong>
                                 </h4>
+                                <p>
+                                  This program is known as FRC
+                                </p>
                                 <a href="#" class="btn btn-light">Search for my school</a>
                             </div>
                         </div>
@@ -163,52 +182,56 @@
         <!-- /.container -->
     </section>
 
-    <!-- Callout -->
-    <aside class="callout">
-        <div class="text-vertical-center">
-            <h1>Vertically Centered Text</h1>
-        </div>
-    </aside>
-
     <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
+    <section id="search" class="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Our Work</h2>
+                    <h2>Schools</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
-                                </a>
-                            </div>
-                        </div>
+                      <input type="text" class="form-control" ng-model="searchText" placeholder="Search">
+
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>School Name</th>
+                            <th>FIRST LEGO League Jr. </th>
+                            <th>FIRST LEGO League </th>
+                            <th>FIRST Robotics Comeptiton </th>
+                            <th>VEX Robotics Comeptiton </th>
+                            <th>Website</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="school in allSchools | filter: searchText">
+                            <td>{{ school.name }}</td>
+                            <td><i ng-if="school.flljr" class="fa fa-check fa-2x" ></i></td>
+                            <td><i ng-if="school.fll" class="fa fa-check fa-2x" ></i></td>
+                            <td><i ng-if="school.frc" class="fa fa-check fa-2x" ></i></td>
+                            <td><i ng-if="school.vex" class="fa fa-check fa-2x" ></i></td>
+                            <td>
+                              <a ng-if="school.hasWebsite" href="{{ school.websiteURL }}">{{ school.websiteTitle }}</a>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td><a href="#startTeam">Start a Team</a></td>
+                            <td><i class="fa fa-check fa-2x" ></i></td>
+                            <td><i class="fa fa-check fa-2x" ></i></td>
+                            <td><i class="fa fa-check fa-2x" ></i></td>
+                            <td><i class="fa fa-check fa-2x" ></i></td>
+                            <td>
+                              <a ng-if="school.hasWebsite" href="{{ school.websiteURL }}">{{ school.websiteTitle }}</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <hr  />
+                      <h2>Don't see your school? </h2><h3><a href="#startTeam">Help us start a team!</a></h3>
+                      <hr />
                     </div>
                     <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View More Items</a>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
@@ -222,36 +245,59 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>The buttons below are impossible to resist.</h3>
-                    <a href="#" class="btn btn-lg btn-light">Click Me!</a>
-                    <a href="#" class="btn btn-lg btn-dark">Look at Me!</a>
+                    <h2>Help us start a team!</h2>
+                    <a href="#" class="btn btn-lg btn-light">Help us start a team!</a>
+                    <a href="#" class="btn btn-lg btn-dark">Contact Us!</a>
                 </div>
             </div>
         </div>
     </aside>
 
-    <!-- Map -->
-    <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br />
-        <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
-        </iframe>
+    <!-- About -->
+    <section id="startTeam" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Starting a Team</h2>
+                    <hr class="small">
+                    <div class="row">
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
     </section>
 
+    <!-- Call to Action -->
+    <aside id="mission" class="call-to-action bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Our Mission</h2>
+                    <p class="lead">
+                      <a style="color: #FFF" href="http://www.crimsonrobotics.com">Crimson Robotics</a>, FIRST Robotics Competition Team 2526, has a mission to give the opportunity of robotics to every child, in every grade, in every school within the Osseo School District, <a href="http://www.district279.org" style="color: #fff">ISD 279</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </aside>
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Start Bootstrap</strong>
+                    <h4>
+                      <strong>Crimson Robotics</strong>
                     </h4>
-                    <p>3481 Melrose Place
-                        <br>Beverly Hills, CA 90210</p>
+                    <h5>
+                      <a href="http://www.crimsonrobotics.com">CrimsonRobotics.com</strong>
+                    </h5>
+                    <p>9800 Fernbrook Ln N
+                        <br>Maple Grove, MN 55369</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a>
+                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:team2526crimsonrobotics@gmail.com">team2526crimsonrobotics@gmail.com</a>
                         </li>
                     </ul>
                     <br>
@@ -267,7 +313,9 @@
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="text-muted">Copyright &copy; Crimson Robotics 2016</p>
+                  </br></br>
+                    <p class="text-muted">These robotics programs are extracurricular school activites run by Crimson Robotics and not official programs of Independant School District 279.</p>
                 </div>
             </div>
         </div>
@@ -282,6 +330,30 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
+
+    var app = angular.module("osseoAreaRobotics", []);
+
+    app.controller("schools", function($scope, $http) {
+        $http.get('https://spreadsheets.google.com/feeds/list/1A-t8ZydNelOE_Ri6KhtoSMugIYckZRpF6Qx30TQHXWg/od6/public/values?alt=json')
+        .then(function(response) {
+          $scope.allSchools = [];
+
+          $.each(response.data.feed.entry, function(index, entry) {
+            $scope.allSchools.push({
+              name: entry.gsx$schoolname.$t,
+              flljr: entry.gsx$flljr.$t == 'TRUE',
+              fll: entry.gsx$fll.$t == 'TRUE',
+              frc: entry.gsx$frc.$t == 'TRUE',
+              vex: entry.gsx$vex.$t == 'TRUE',
+              hasWebsite: entry.gsx$websitetitle.$t.length > 0 && entry.gsx$websiteurl.$t.length > 0,
+              websiteTitle: entry.gsx$websitetitle.$t,
+              websiteURL: entry.gsx$websiteurl.$t
+            });
+            console.log($scope.allSchools);
+          });
+        });
+    });
+
     // Closes the sidebar menu
     $("#menu-close").click(function(e) {
         e.preventDefault();
