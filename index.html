@@ -44,16 +44,7 @@
                 <a href="#top" onclick=$("#menu-close").click();>Home</a>
             </li>
             <li>
-                <a href="#programs" onclick=$("#menu-close").click();>The Programs</a>
-            </li>
-            <li>
-                <a href="#search" onclick=$("#menu-close").click();>Schools</a>
-            </li>
-            <li>
-                <a href="#mission" onclick=$("#menu-close").click();>Our Mission</a>
-            </li>
-            <li>
-                <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
+                <a href="#schools" onclick=$("#menu-close").click();>Schools</a>
             </li>
         </ul>
     </nav>
@@ -63,7 +54,7 @@
         <div class="text-vertical-center">
             <h1>Osseo Area Robotics</h1>
             <br>
-            <h3>To Give the Opportunity of Robotics to Every Child, in Every Grade, in Every School <br />in <a href="http://www.district279.org">the Osseo School District</a>.</h3>
+            <h3>To Give the Opportunity of Robotics to Every Child, in Every Grade, in Every School.</h3>
             <div class="col-lg-6 pull-right">
               Crimson Robotics, Mission Statement
             </div>
@@ -95,7 +86,6 @@
     </section>
 
     <!-- Services -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
     <section id="schools" class="services bg-primary">
         <div class="container">
             <div class="row text-center">
@@ -243,6 +233,9 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Interested?</h2>
+                    <p class="lead">
+                      {{selectedProgram.currentMessage}}
+                    </p>
                     <a ng-if="selectedProgram.hasWebsite" href="{{ selectedProgram.websiteURL }}" class="btn btn-lg btn-dark">{{ selectedProgram.websiteTitle }}</a>
                     <a ng-if="selectedProgram.contactEmail.length > 0" href="mailto:{{selectedProgram.contactEmail}}" class="btn btn-lg btn-dark">Contact Us</a>
                 </div>
@@ -313,6 +306,7 @@
               frc: entry.gsx$frc.$t == 'TRUE',
               ftc: entry.gsx$ftc.$t == 'TRUE',
               vex: entry.gsx$vex.$t == 'TRUE',
+              currentMessage: entry.gsx$currentmessage.$t,
               contactEmail: entry.gsx$contactemail.$t,
               hasWebsite: entry.gsx$websitetitle.$t.length > 0 && entry.gsx$websiteurl.$t.length > 0,
               websiteTitle: entry.gsx$websitetitle.$t,
