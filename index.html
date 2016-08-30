@@ -70,7 +70,10 @@
 
             <br>
             <br>
-            <a href="#search" class="btn btn-dark btn-lg">Search for opportunities at my school</a>
+            <div class="row">
+              <a href="#schools" class="btn btn-dark btn-lg">Search for opportunities at my school</a>
+            </div>
+
 
         </div>
     </header>
@@ -93,85 +96,41 @@
 
     <!-- Services -->
     <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="programs" class="services bg-primary">
+    <section id="schools" class="services bg-primary">
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h2>The Programs</h2>
-                    <hr class="small">
+                    <h2>Choose your school from the list:</h2>
                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                              <a href="http://www.firstinspires.org/robotics/flljr" class="thumbnail">
-                                <img src="img/FLLJr.jpg" alt="Junior FIRST LEGO League">
-                                <div class="caption">
-                                 <h3>K-3rd Grade</h3>
-                                 <p>FIRST LEGO League Jr. is designed to introduce STEM concepts to kids ages 6 to 10 while exciting them through a brand they know and love − LEGO®.</p>
-                                </div>
-                              </a>
-                                <h4>
-                                    <strong>Interested?</strong>
-                                </h4>
-                                <p>
-                                  This program is known as FLL Jr
-                                </p>
-                                <a href="#" class="btn btn-light">Search for my school</a>
+                      <div class="col-md-8 col-md-offset-2">
+                        <input type="text" class="form-control" ng-model="searchText" placeholder="Search" />
+                      </br>
+                      </div>
+                    </div>
+                    <br  />
+                    <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <div class="row">
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th style="color: #000"><h4>School Name</h4></th>
+                                <th style="color: #000"><h4>Programs</h4></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="school in allSchools | filter: searchText">
+                                <td style="color: #000">{{ school.name }}</td>
+                                <td>
+                                  <a href="#programs" ng-click="$parent.selectedProgram = school" class="btn btn-lg btn-dark">View Programs</a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                              <a href="http://www.firstinspires.org/robotics/fll" class="thumbnail">
-                                <img src="img/FLL.jpg" alt="FIRST LEGO League">
-                                <div class="caption">
-                                 <h3>4th-8th Grade</h3>
-                                 <p>FIRST LEGO League teams research a real-world problem such as food safety, recycling, energy, etc., and are challenged to develop a solution. They also must design, build, program a robot using LEGO MINDSTORMS®, then compete on a table-top playing field.</p>
-                                </div>
-                             </a>
-                                <h4>
-                                    <strong>Interested?</strong>
-                                </h4>
-                                <p>
-                                  This program is known as FLL
-                                </p>
-                                <a href="#" class="btn btn-light">Search for my school</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                              <a href="http://www.firstinspires.org/robotics/frc" class="thumbnail">
-                                <img src="img/FRC.jpg" alt="FIRST Robotics Competition">
-                                <div class="caption">
-                                 <h3>9th-12th Grade</h3>
-                                 <p>High-school student participants call it “the hardest fun you’ll ever have.” Under strict rules, limited resources, and an intense six-week time limit, teams of 20 or more students are challenged to raise funds, design a team "brand," hone teamwork skills, and build and program industrial-size robots to play a difficult field game against like-minded competitors. It’s as close to real-world engineering as a student can get.</p>
-                                </div>
-                             </a>
-                                <h4>
-                                    <strong>Interested?</strong>
-                                </h4>
-                                <p>
-                                  This program is known as VEX
-                                </p>
-                                <a href="#" class="btn btn-light">Search for my school</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                              <a href="http://www.roboticseducation.org/competition-teams/vex-robotics-competition/" class="thumbnail">
-                                <img src="img/VEX.jpg" alt="VEX Robotics Competition">
-                                <div class="caption">
-                                 <h3>9th-12th Grade</h3>
-                                 <p>An exciting engineering challenge is presented each year in the form of a game. Students build innovative robots and compete year-round in a variety of matches. In addition, students gain life skills such as teamwork, perseverance, communication, collaboration, project management, and critical thinking.</p>
-                                </div>
-                             </a>
-                                <h4>
-                                    <strong>Interested?</strong>
-                                </h4>
-                                <p>
-                                  This program is known as FRC
-                                </p>
-                                <a href="#" class="btn btn-light">Search for my school</a>
-                            </div>
-                        </div>
+                          </div>
+                      </div>
                     </div>
                     <!-- /.row (nested) -->
                 </div>
@@ -182,60 +141,6 @@
         <!-- /.container -->
     </section>
 
-    <!-- Portfolio -->
-    <section id="search" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Schools</h2>
-                    <hr class="small">
-                    <div class="row">
-                      <input type="text" class="form-control" ng-model="searchText" placeholder="Search">
-
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>School Name</th>
-                            <th>FIRST LEGO League Jr. </th>
-                            <th>FIRST LEGO League </th>
-                            <th>FIRST Robotics Comeptiton </th>
-                            <th>VEX Robotics Comeptiton </th>
-                            <th>Website</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr ng-repeat="school in allSchools | filter: searchText">
-                            <td>{{ school.name }}</td>
-                            <td><i ng-if="school.flljr" class="fa fa-check fa-2x" ></i></td>
-                            <td><i ng-if="school.fll" class="fa fa-check fa-2x" ></i></td>
-                            <td><i ng-if="school.frc" class="fa fa-check fa-2x" ></i></td>
-                            <td><i ng-if="school.vex" class="fa fa-check fa-2x" ></i></td>
-                            <td>
-                              <a ng-if="school.hasWebsite" href="{{ school.websiteURL }}">{{ school.websiteTitle }}</a>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td><a href="#startTeam">Start a Team</a></td>
-                            <td><i class="fa fa-check fa-2x" ></i></td>
-                            <td><i class="fa fa-check fa-2x" ></i></td>
-                            <td><i class="fa fa-check fa-2x" ></i></td>
-                            <td><i class="fa fa-check fa-2x" ></i></td>
-                            <td>
-                              <a ng-if="school.hasWebsite" href="{{ school.websiteURL }}">{{ school.websiteTitle }}</a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <!-- /.row (nested) -->
-                </div>
-                <!-- /.col-lg-10 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
 
     <!-- Call to Action -->
     <aside class="call-to-action bg-primary">
@@ -251,20 +156,81 @@
     </aside>
 
     <!-- About -->
-    <section id="mission" class="about">
+    <section id="programs" ng-if="selectedProgram != null">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Our Mission</h2>
+                    <h2>{{ selectedProgram.name }}</h2>
                     <hr class="small">
                     <div class="row">
-                      <p class="lead"> To give the opportunity of robotics to every child, in every grade, in every school within the Osseo School District (<a href="http://www.district279.org">ISD 279</a>).</p>
-                      <hr class="small">
-                      <h4>
-                        This is the mission statement of <a href="http://www.crimsonrobotics.com">Crimson Robotics</a>, FIRST Robotics Competition Team 2526. We are a group of passionate high school students and adult mentors that have a dream to change the world, and we're starting right here in our community.
-                      </h4><br />
-                      <img class="img-rounded img-responsive" alt="Crimson Robotics" src="https://pbs.twimg.com/profile_banners/2161617768/1457290930/1500x500" />
+                      <p class="lead"> The following programs are offered at {{ selectedProgram.name }}. If you have any questions, please do not hesidate to contact {{ selectedProgram.contactEmail }}</p>
+
+                      <div class="row">
+                        <div ng-if="selectedProgram.flljr" class="col-md-4 col-sm-6">
+                            <div class="service-item">
+                              <a href="http://www.firstinspires.org/robotics/flljr" class="thumbnail">
+                                <img src="img/FLLJr.jpg" alt="Junior FIRST LEGO League">
+                                <div class="caption">
+                                 <h3>K-3rd Grade</h3>
+                                 <p>FIRST LEGO League Jr. is designed to introduce STEM concepts to kids ages 6 to 10 while exciting them through a brand they know and love − LEGO®.</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                        <div ng-if="selectedProgram.fll" class="col-md-4 col-sm-6">
+                            <div class="service-item">
+                              <a href="http://www.firstinspires.org/robotics/fll" class="thumbnail">
+                                <img src="img/FLL.jpg" alt="FIRST LEGO League">
+                                <div class="caption">
+                                 <h3>4th-8th Grade</h3>
+                                 <p>FIRST LEGO League teams research a real-world problem such as food safety, recycling, energy, etc., and are challenged to develop a solution. They also must design, build, program a robot using LEGO MINDSTORMS®, then compete on a table-top playing field.</p>
+                                </div>
+                             </a>
+                            </div>
+                        </div>
+                        <div ng-if="selectedProgram.ftc" class="col-md-4 col-sm-6">
+                            <div class="service-item">
+                              <a href="http://www.firstinspires.org/robotics/ftc" class="thumbnail">
+                                <img src="img/FTC.jpg" alt="FIRST Tech Challenge Competition">
+                                <div class="caption">
+                                 <h3>7th-12th Grade</h3>
+                                 <p>High-school student participants call it “the hardest fun you’ll ever have.” Under strict rules, limited resources, and an intense six-week time limit, teams of 20 or more students are challenged to raise funds, design a team "brand," hone teamwork skills, and build and program industrial-size robots to play a difficult field game against like-minded competitors. It’s as close to real-world engineering as a student can get.</p>
+                                </div>
+                             </a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div ng-if="selectedProgram.frc" class="col-md-6 col-sm-6">
+                            <div class="service-item">
+                              <a href="http://www.firstinspires.org/robotics/frc" class="thumbnail">
+                                <img src="img/FRC.jpg" alt="FIRST Robotics Competition">
+                                <div class="caption">
+                                 <h3>9th-12th Grade</h3>
+                                 <p>High-school student participants call it “the hardest fun you’ll ever have.” Under strict rules, limited resources, and an intense six-week time limit, teams of 20 or more students are challenged to raise funds, design a team "brand," hone teamwork skills, and build and program industrial-size robots to play a difficult field game against like-minded competitors. It’s as close to real-world engineering as a student can get.</p>
+                                </div>
+                             </a>
+                            </div>
+                        </div>
+                        <div ng-if="selectedProgram.vex" class="col-md-6 col-sm-6">
+                            <div class="service-item">
+                              <a href="http://www.roboticseducation.org/competition-teams/vex-robotics-competition/" class="thumbnail">
+                                <img src="img/VEX.jpg" alt="VEX Robotics Competition">
+                                <div class="caption">
+                                 <h3>9th-12th Grade</h3>
+                                 <p>An exciting engineering challenge is presented each year in the form of a game. Students build innovative robots and compete year-round in a variety of matches. In addition, students gain life skills such as teamwork, perseverance, communication, collaboration, project management, and critical thinking.</p>
+                                </div>
+                             </a>
+                            </div>
+                        </div>
                     </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+
+                      </div>
                 </div>
             </div>
             <!-- /.row -->
@@ -273,34 +239,17 @@
     </section>
 
     <!-- Call to Action -->
-    <aside id="mission" class="call-to-action bg-primary">
+    <aside class="call-to-action bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Contact Us</h2>
-                    <a href="mailto:2526crimsonrobotics@gmail.com" class="btn btn-lg btn-light">Send us an E-Mail</a>
+                    <h2>Interested?</h2>
+                    <a ng-if="selectedProgram.hasWebsite" href="{{ selectedProgram.websiteURL }}" class="btn btn-lg btn-dark">{{ selectedProgram.websiteTitle }}</a>
+                    <a ng-if="selectedProgram.contactEmail.length > 0" href="mailto:{{selectedProgram.contactEmail}}" class="btn btn-lg btn-dark">Contact Us</a>
                 </div>
             </div>
         </div>
     </aside>
-
-    <!-- Starting a Team -->
-    <section id="startTeam" class="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Starting a Team</h2>
-                    <hr class="small">
-                    <div class="row">
-                      <p>
-                        Starting a team can be easy and affordable. 
-                      </p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
 
     <!-- Footer -->
     <footer id="contact">
@@ -363,7 +312,9 @@
               flljr: entry.gsx$flljr.$t == 'TRUE',
               fll: entry.gsx$fll.$t == 'TRUE',
               frc: entry.gsx$frc.$t == 'TRUE',
+              ftc: entry.gsx$ftc.$t == 'TRUE',
               vex: entry.gsx$vex.$t == 'TRUE',
+              contactEmail: entry.gsx$contactemail.$t,
               hasWebsite: entry.gsx$websitetitle.$t.length > 0 && entry.gsx$websiteurl.$t.length > 0,
               websiteTitle: entry.gsx$websitetitle.$t,
               websiteURL: entry.gsx$websiteurl.$t
@@ -371,6 +322,8 @@
             console.log($scope.allSchools);
           });
         });
+
+        $scope.selected = null;
     });
 
     // Closes the sidebar menu
