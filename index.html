@@ -154,7 +154,7 @@
                     <div class="row">
                       <p class="lead"> The following programs are offered at {{ selectedProgram.name }}. If you have any questions, please do not hesidate to contact {{ selectedProgram.contactEmail }}</p>
                       <div class="alert alert-warning" ng-if="selectedProgram.currentMessage.length > 0">
-                        {{selectedProgram.currentMessage}}
+                        <p class="lead">{{selectedProgram.currentMessage}}</p>
                       </div>
                     </div>
 
