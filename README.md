@@ -2,14 +2,6 @@
 
 Maintained by [Crimson Robotics](http://www.crimsonrobotics.com), FIRST Robotics Competition Team 2526. 
 
-# How it works
-
-Data is pulled from a Google Sheets document with each line/row representing a new location/facility/school. The locations contain data stored in the sheet cells, pulled using Google Sheet's Publish to Web and the JSON export URL (not normally shown in Google Sheets, uses this template:
-
-`https://spreadsheets.google.com/feeds/list/` + Spreadsheet ID + `/od6/public/values?alt=json`
-
-Using [AngularJS 2](angular.io)'s [$http](https://docs.angularjs.org/api/ng/service/$http) feature, I pull the data from the sheet and save it to a local file. The list of schools are then printed using AngularJS's ng-repeat. Once a school has been selected, that school is set to the global variable `selectedSchool` , which triggers the next 'page'/section (which only shows ng-if="selected school exists"). The contents of this page is rendered using the data from the selected school.
-
 # Adding data to the school pages
 
 First, add the data as a new column in the Google Sheet. Lowercase slugify this text ("Test" => "test", "This is a test" => thisisatest", etc) and add it the the index.html script section where on object is getting pushed to the database:
